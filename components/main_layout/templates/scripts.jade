@@ -1,0 +1,10 @@
+if sd.NODE_ENV != 'test'
+  //- Google analytics script (and potentially others, e.g. Mixpanel)
+  include ./google_analytics.html
+
+//- Wire up sharify
+if sharify
+  != sharify.script()
+
+//- Add Google's jQuery
+script( src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" )
