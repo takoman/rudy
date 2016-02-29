@@ -17,9 +17,13 @@ sf:
 	$(BIN)/forever $(BIN)/coffee --nodejs --max_old_space_size=960 index.coffee
 
 # Run all of the project-level tests, followed by app-level tests
-test: assets
+test: lint assets
 	$(BIN)/mocha $(shell find test -name '*.coffee' -not -path 'test/helpers/*')
 	$(BIN)/mocha $(shell find apps/*/test -name '*.coffee' -not -path 'test/helpers/*')
+
+# Run Coffeelint to check coffeescript styles
+lint:
+	$(BIN)/coffeelint $(shell find . -name '*.coffee' -not -path './node_modules/*')
 
 # Generate minified assets from the /assets folder and output it to /public.
 assets:
@@ -38,6 +42,6 @@ assets:
 deploy: assets
 	$(BIN)/bucket-assets --bucket rudy-$(env)
 	heroku config:set COMMIT_HASH=$(shell git rev-parse --short HEAD) --app=rudy-$(env)
-	git push --force git@heroku.com:rudy-$(env).git
+	git push --force git@heroku.com:rudy-$(env).git $(shell git rev-parse --abbrev-ref HEAD):master
 
 .PHONY: test assets deploy
