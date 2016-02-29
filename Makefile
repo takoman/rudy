@@ -17,9 +17,13 @@ sf:
 	$(BIN)/forever $(BIN)/coffee --nodejs --max_old_space_size=960 index.coffee
 
 # Run all of the project-level tests, followed by app-level tests
-test: assets
+test: lint assets
 	$(BIN)/mocha $(shell find test -name '*.coffee' -not -path 'test/helpers/*')
 	$(BIN)/mocha $(shell find apps/*/test -name '*.coffee' -not -path 'test/helpers/*')
+
+# Run Coffeelint to check coffeescript styles
+lint:
+	$(BIN)/coffeelint $(shell find . -name '*.coffee' -not -path './node_modules/*')
 
 # Generate minified assets from the /assets folder and output it to /public.
 assets:
