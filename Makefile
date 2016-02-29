@@ -42,6 +42,6 @@ assets:
 deploy: assets
 	$(BIN)/bucket-assets --bucket rudy-$(env)
 	heroku config:set COMMIT_HASH=$(shell git rev-parse --short HEAD) --app=rudy-$(env)
-	git push --force git@heroku.com:rudy-$(env).git
+	git push --force git@heroku.com:rudy-$(env).git $(shell git rev-parse --abbrev-ref HEAD):master
 
 .PHONY: test assets deploy
