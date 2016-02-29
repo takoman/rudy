@@ -8,3 +8,7 @@ deployment:
     branch: develop
     commands:
       - make deploy env=staging
+  production:
+    branch: master
+    commands:
+      - make deploy env=production
