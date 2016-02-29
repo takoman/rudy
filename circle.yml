@@ -1,0 +1,10 @@
+machine:
+  environment:
+    STAGING_APP: ${CIRCLE_PROJECT_REPONAME}-staging
+    PRODUCTION_APP: ${CIRCLE_PROJECT_REPONAME}-production
+
+deployment:
+  staging:
+    branch: develop
+    commands:
+      - make deploy env=staging
