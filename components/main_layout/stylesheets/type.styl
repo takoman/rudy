@@ -1,0 +1,15 @@
+//No oblique font in chinese
+em
+  font-style normal
+  font-weight inherit
+
+.em
+  position relative
+  &:after
+    position absolute
+    top 0.65em
+    left 0
+    width 100%
+    overflow hidden
+    white-space nowrap
+    content "・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・"
