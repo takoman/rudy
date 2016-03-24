@@ -59,7 +59,6 @@ module.exports = (app) ->
 
   # Mount apps
   app.use require '../apps/home'
-  app.use require '../apps/style_guide'
 
   # Mount static middleware for sub apps, components, and project-wide
   fs.readdirSync(path.resolve __dirname, '../apps').forEach (fld) ->
