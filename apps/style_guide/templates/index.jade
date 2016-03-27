@@ -1,0 +1,106 @@
+extends ../../../components/main_layout/templates/index
+
+append locals
+  - assetPackage = 'style_guide'
+  - bodyClass = 'style_guide'
+
+block head
+  title Pickee Style Guide
+
+block body
+  .container-fluid.style-guide-container
+
+    .style-guide-sidebar
+      nav.style-guide-nav
+        ul.list-unstyled
+          li: a( href="#overview" ) Overview 總覽
+          li: a( href="#typography" ) Typography 字體
+          li: a( href="#grids" )  Grids 網格
+          li: a( href="#colors" ) Colors 顏色
+          li: a( href="#buttons" ) Buttons 按鈕
+          li: a( href="#tables" ) Tables 表格
+          li: a( href="#panels" ) Panels 面板
+          li: a( href="#forms" ) Forms 表單
+          li: a( href="#components" ) Components 其他元件
+
+    .style-guide-content
+      h1 Pickee Style Guide
+
+      section#overview.component-section
+        h2 Overview 總覽
+        |Pickee Style Guide 是 
+        a( href='#' ) pickee 
+        |的樣式準則。
+        h3 Twitter Bootstrap
+        |Pickee 採用了 
+        a( href='http://www.getbootstrap.com' ) Twitter Bootstrap 
+        |的基本 Grid Syetem 以及一些基本 css。
+
+      section#typography.component-section
+        h2#typography Typography 字體
+        |Pickee 是以中文為主的網站，中文字型以黑體為主，依序為蘋方黑體、冬青黑體、微軟正黑體。英文字體為Helvetica Neue、Helvetica、Arial。
+        pre
+          code
+            |font-family: "Helvetica Neue", Helvetica, Arial, PingFangTC-Ultralight, "Hiragino Sans GB", "\5FAE\8EDF\6B63\9ED1\9AD4", sans-serif;
+        .component-subsection
+          h3 Headings 標題
+          .example
+            h1 Header 1 標題一 Pickee中文字體，精挑細選。
+            h2 Header 2 標題二 Pickee中文字體，精挑細選。
+            h3 Header 3 標題三 Pickee中文字體，精挑細選。
+            h4 Header 4 標題四 Pickee中文字體，精挑細選。
+            h5 Header 5 標題五 Pickee中文字體，精挑細選。
+            h6 Header 6 標題六 Pickee中文字體，精挑細選。
+        .component-subsection
+          h3 Body copy 內文
+          |考慮到中文排版的閱讀舒適性，行距設定（lien-height）為1.8。且取消 &lt;em&gt; 標籤的斜體。
+          pre
+            code
+              |em { font-style: normal; }
+          .example
+            p
+              |內文 Pickee 中文字體，精挑細選。
+              |iPhone，是<u>蘋果公司</u>旗下研發的行動電話系列，它搭載蘋果公司研發的iOS<small>（以前是OS）</small>手機作業系统[13]。第一代iPhone於2007年1月9日由當時蘋果公司CEO的<strong>史蒂夫·賈伯斯</strong>發布[14]，並在同年6月29日正式發售[15][16]。2015年9月9日，蘋果公司在美國舊金山舉行新產品發布會上，推出第九代產品iPhone 6S，於同年9月25日正式發售。蘋果公司旗下智慧型手機iPhone系列，以個別推出的款式計算，可以是全球銷量第一大的智慧型手機。
+            p
+              |内文 Pickee 中文字体，精挑细选。
+              |iPhone，是<u>苹果公司</u>旗下研发的移动电话系列，它搭载苹果公司研发的iOS<small>（以前是OS）</small>手机操作系统[13]。第一代iPhone于2007年1月9日由当时苹果公司CEO的<strong>史蒂夫·乔布斯</strong>发布[14]，并在同年6月29日正式发售[15][16]。2015年9月9日，苹果公司在美国旧金山举行新产品发布会上，推出第九代产品iPhone 6S，于同年9月25日正式发售。苹果公司旗下智能手机iPhone系列，以个别推出的款式计算，可以是全球销量第一大的智能手机。订定计画。
+        .component-subsection
+          h3 Inline text elements
+          h4 Marked text
+          h4 Deleted text
+          h4 Strikethrough text
+          h4 Inserted text
+          h4 Underlined text
+          h4 Small text
+          h4 Bold
+          h4 Italics
+          h4 Alignment classes
+          h4 Transformation classes
+        .component-subsection
+          h3 Blockquotes
+        .component-subsection
+          h3 Lists
+          h4 Unordered
+          h4 Ordered
+          h4 Unstyled
+          h4 Inline
+          h4 Description
+          h4 Horizontal description
+
+      section#grids.component-section
+        h2 Grid System 網格
+
+      section#colors.component-section
+        h2 Colors 顏色
+
+      section#buttons.component-section
+        h2 Buttons 按鈕
+
+      section#tables.component-section
+        h2 Tables 表格
+
+      section#forms.component-section
+        h2 Forms 表單
+
+      section#components.component-section
+        h2 Components 其他元件

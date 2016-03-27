@@ -1,0 +1,63 @@
+@import "../../../components/main_layout/stylesheets"
+body
+.style-guide-container
+.style-guide-sidebar
+  height 100%
+
+.style-guide-container
+  padding 0
+
+.style-guide-sidebar
+.style-guide-content
+  padding-top 60px
+
+
+.style-guide-sidebar
+  make-xs-column(24)
+  text-align right
+  background-color $gray-lighter
+  padding-right 3%
+  @media (min-width $screen-sm-min)
+    make-sm-column(6)
+    position fixed
+
+.style-guide-content
+  make-xs-column(24)
+  make-sm-column(18)
+  make-sm-column-offset(6)
+  padding-left 3%
+  padding-right 10%
+
+.style-guide-nav
+  display inline-block
+  text-align left
+  padding 20px
+
+pre
+  font-size 11px
+  text-align left
+
+.style-guide-container
+
+  .style-guide-nav
+    a, a:hover, a:active
+      color $black
+
+  .example
+    position relative
+    border 1px $gray-lighter solid
+    padding 45px 20px 20px
+    &:after
+      position absolute
+      top 10px
+      left 20px
+      font-weight 500
+      color $gray
+      letter-spacing 1px
+      content "EXAMPLE"
+
+  .component-section
+    margin-bottom 100px
+
+  .component-subsection
+    margin-bottom 30px
