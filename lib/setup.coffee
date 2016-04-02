@@ -7,13 +7,14 @@
 { API_URL, APP_NAME, APP_URL, CDN_URL, COOKIE_DOMAIN, NODE_ENV, PORT,
   S3_KEY, S3_SECRET, S3_BUCKET, S3_UPLOAD_DIR, PICKEE_ID, PICKEE_SECRET
 } = config = require '../config'
-express = require 'express'
-Backbone = require 'backbone'
-sharify = require 'sharify'
-path = require 'path'
-fs = require 'fs'
-bucketAssets = require 'bucket-assets'
-logger = require 'morgan'
+express             = require 'express'
+Backbone            = require 'backbone'
+sharify             = require 'sharify'
+path                = require 'path'
+fs                  = require 'fs'
+bucketAssets        = require 'bucket-assets'
+logger              = require 'morgan'
+pickeeXappMiddlware = require './middleware/pickee-xapp-middleware'
 
 module.exports = (app) ->
 
@@ -24,8 +25,16 @@ module.exports = (app) ->
     JS_EXT: (if 'production' is config.NODE_ENV then '.min.js' else '.js')
     CSS_EXT: (if 'production' is config.NODE_ENV then '.min.css' else '.css')
 
-  # Override Backbone to use server-side sync
-  Backbone.sync = require 'backbone-super-sync'
+  # Override Backbone to use server-side sync, inject the XAPP token,
+  # add redis caching, and augment sync with Q promises.
+  sync = require "backbone-super-sync"
+  # sync.timeout = API_REQUEST_TIMEOUT
+  # sync.cacheClient = cache.client
+  # sync.defaultCacheTime = DEFAULT_CACHE_TIME
+  Backbone.sync = (method, model, options) ->
+    options.headers ?= {}
+    options.headers['X-XAPP-TOKEN'] = pickeeXappMiddlware.token or ''
+    sync method, model, options
 
   # Mount sharify
   app.use sharify
@@ -52,6 +61,12 @@ module.exports = (app) ->
   if 'test' is sd.NODE_ENV
     # Mount fake API server
     app.use '/__api', require('../test/helpers/integration.coffee').api
+
+  app.use pickeeXappMiddlware(
+    apiUrl: API_URL
+    clientId: PICKEE_ID
+    clientSecret: PICKEE_SECRET
+  ) unless 'test' is NODE_ENV
 
   # General helpers and express middleware
   app.use bucketAssets()
