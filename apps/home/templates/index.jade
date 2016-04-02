@@ -8,4 +8,7 @@ block head
   title Pickee
 
 block body
-  .container Pickee
+  .container
+    h1 Pickee
+    if user
+      .user-info User name: #{user.get('name')}, email: #{user.get('email')}
