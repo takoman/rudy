@@ -10,7 +10,7 @@ BIN = node_modules/.bin
 BOOTSTRAP_STYLUS = node_modules/bootstrap-styl
 # Start the server
 s:
-	APP_URL=http://localhost:5000 APP_NAME=rudy-development foreman start
+	foreman start
 
 # Start the server using forever
 sf:

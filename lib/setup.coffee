@@ -14,6 +14,7 @@ path                = require 'path'
 fs                  = require 'fs'
 bucketAssets        = require 'bucket-assets'
 logger              = require 'morgan'
+ensureSSL           = require './middleware/ensure_ssl'
 pickeeXappMiddlware = require './middleware/pickee-xapp-middleware'
 
 module.exports = (app) ->
@@ -67,6 +68,9 @@ module.exports = (app) ->
     clientId: PICKEE_ID
     clientSecret: PICKEE_SECRET
   ) unless 'test' is NODE_ENV
+
+  # Proxy / redirect requests before they even have to deal with Rudy routing
+  app.use ensureSSL
 
   # General helpers and express middleware
   app.use bucketAssets()
