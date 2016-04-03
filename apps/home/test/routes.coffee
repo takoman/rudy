@@ -6,7 +6,7 @@ routes = require '../routes'
 describe 'Home routes', ->
   beforeEach ->
     sinon.stub Backbone, 'sync'
-    @req = {}
+    @req = { query: {} }
     @res = { render: sinon.stub() }
 
   afterEach ->
