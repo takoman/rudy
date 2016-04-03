@@ -367,10 +367,6 @@ block body
           .col-xs-8: .grid-content
           .col-xs-8: .grid-content
 
-
-
-
-
       section#colors.component-section
         h2 Colors 顏色
 
@@ -379,6 +375,179 @@ block body
 
       section#tables.component-section
         h2 Tables 表格
+        h3 Basic 基本
+        .example
+          table.table
+            caption 表格標題
+            thead
+              tr
+                th #
+                th First Name
+                th Last Name
+                th Username
+            tbody
+              tr
+                td 1
+                td Mark
+                td Otto
+                td @mdo
+              tr
+                td 2
+                td Jacob
+                td Thornton
+                td @fat
+              tr
+                td 3
+                td Larry
+                td the Bird
+                td @twitter
+        pre: code.
+          table.table
+            ...
+
+        h3 Striped rows 橫紋式表格
+        .example
+          table.table.table-striped
+            thead
+              tr
+                th #
+                th First Name
+                th Last Name
+                th Username
+            tbody
+              tr
+                td 1
+                td Mark
+                td Otto
+                td @mdo
+              tr
+                td 2
+                td Jacob
+                td Thornton
+                td @fat
+              tr
+                td 3
+                td Larry
+                td the Bird
+                td @twitter
+        pre: code.
+          table.table.table-striped
+            ...
+
+        h3 Bordered table 有框式表格
+        .example
+          table.table.table-bordered
+            thead
+              tr
+                th #
+                th First Name
+                th Last Name
+                th Username
+            tbody
+              tr
+                td 1
+                td Mark
+                td Otto
+                td @mdo
+              tr
+                td 2
+                td Jacob
+                td Thornton
+                td @fat
+              tr
+                td 3
+                td Larry
+                td the Bird
+                td @twitter
+        pre: code.
+          table.table.table-bordered
+            ...
+
+        h3 Hover rows 移入行
+        .example
+          table.table.table-hover
+            thead
+              tr
+                th #
+                th First Name
+                th Last Name
+                th Username
+            tbody
+              tr
+                td 1
+                td Mark
+                td Otto
+                td @mdo
+              tr
+                td 2
+                td Jacob
+                td Thornton
+                td @fat
+              tr
+                td 3
+                td Larry
+                td the Bird
+                td @twitter
+        pre: code.
+          table.table.table-hover
+            ...
+
+        h3 Condensed table 緊湊表格
+        p Padding 減為一半
+        .example
+          table.table.table-condensed
+            thead
+              tr
+                th #
+                th First Name
+                th Last Name
+                th Username
+            tbody
+              tr
+                td 1
+                td Mark
+                td Otto
+                td @mdo
+              tr
+                td 2
+                td Jacob
+                td Thornton
+                td @fat
+              tr
+                td 3
+                td Larry
+                td the Bird
+                td @twitter
+        pre: code.
+          table.table.table-condensed
+            ...
+        h3 Contextual classes 狀態類別
+        .example
+          table.table
+            thead
+              tr
+                th #
+                th &lt;tr&gt; class
+            tbody
+              tr
+                td 1
+                td
+              tr.active
+                td 2
+                td active
+              tr.success
+                td 3
+                td success
+              tr.info
+                td 4
+                td info
+              tr.warning
+                td 5
+                td warning
+              tr.danger
+                td 6
+                td danger
+
 
       section#forms.component-section
         h2 Forms 表單
