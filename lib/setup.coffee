@@ -14,6 +14,7 @@ path                = require 'path'
 fs                  = require 'fs'
 bucketAssets        = require 'bucket-assets'
 logger              = require 'morgan'
+localsMiddleware    = require './middleware/locals'
 ensureSSL           = require './middleware/ensure_ssl'
 pickeeXappMiddlware = require './middleware/pickee-xapp-middleware'
 
@@ -74,6 +75,7 @@ module.exports = (app) ->
 
   # General helpers and express middleware
   app.use bucketAssets()
+  app.use localsMiddleware
   app.use logger('dev')
 
   # Mount apps
