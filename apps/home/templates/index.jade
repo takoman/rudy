@@ -10,5 +10,13 @@ block head
 block body
   .container
     h1 Pickee
-    if user
-      .user-info User name: #{user.get('name')}, email: #{user.get('email')}
+    .user-info
+      if user
+        User name: #{user.get('name')}, email: #{user.get('email')}
+    form.user-search-form
+      input(
+        name='id'
+        placeholder='Search user by ID'
+        required
+      )
+      button( type='submit' ) Search
