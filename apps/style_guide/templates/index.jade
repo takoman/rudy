@@ -15,11 +15,10 @@ block body
         ul.list-unstyled
           li: a( href="#overview" ) Overview 總覽
           li: a( href="#typography" ) Typography 字體
-          li: a( href="#grids" )  Grids 網格
+          li: a( href="#grids" )  Grid System 網格
           li: a( href="#colors" ) Colors 顏色
           li: a( href="#buttons" ) Buttons 按鈕
           li: a( href="#tables" ) Tables 表格
-          li: a( href="#panels" ) Panels 面板
           li: a( href="#forms" ) Forms 表單
           li: a( href="#components" ) Components 其他元件
 
@@ -124,7 +123,7 @@ block body
           .example
             | 你可以使用 mark 標籤以 <mark>醒目提示</mark> 文字內容。
           pre: code.
-            你可以使用 mark 標籤以 &lt;mark&gt; 醒目提示 &lt;/mark&gt; 文字內容。
+            你可以使用 mark 標籤以 &lt;mark&gt;醒目提示&lt;/mark&gt; 文字內容。
           h4 Deleted text 刪除文字
           .example
             | <del>此行文字是要被視為已刪除文字。</del>
@@ -345,6 +344,10 @@ block body
           .col-xs-8 .col-xs-8
           .col-xs-8 .col-xs-8
 
+        .row.grid-example-row.show-grid
+          .col-xs-12 .col-xs-12
+          .col-xs-12 .col-xs-12
+
         p Grid 內左右皆有 10px 的 padding，對 grid 的子元素來說，可以當做有 20px 的 gutter 。
 
         .row.grid-example-row
@@ -367,6 +370,10 @@ block body
           .col-xs-8: .grid-content
           .col-xs-8: .grid-content
 
+        .row.grid-example-row
+          .col-xs-12: .grid-content
+          .col-xs-12: .grid-content
+
       section#colors.component-section
         h2 Colors 顏色
 
@@ -375,182 +382,568 @@ block body
 
       section#tables.component-section
         h2 Tables 表格
-        h3 Basic 基本
-        .example
-          table.table
-            caption 表格標題
-            thead
-              tr
-                th #
-                th First Name
-                th Last Name
-                th Username
-            tbody
-              tr
-                td 1
-                td Mark
-                td Otto
-                td @mdo
-              tr
-                td 2
-                td Jacob
-                td Thornton
-                td @fat
-              tr
-                td 3
-                td Larry
-                td the Bird
-                td @twitter
-        pre: code.
-          table.table
-            ...
 
-        h3 Striped rows 橫紋式表格
-        .example
-          table.table.table-striped
-            thead
-              tr
-                th #
-                th First Name
-                th Last Name
-                th Username
-            tbody
-              tr
-                td 1
-                td Mark
-                td Otto
-                td @mdo
-              tr
-                td 2
-                td Jacob
-                td Thornton
-                td @fat
-              tr
-                td 3
-                td Larry
-                td the Bird
-                td @twitter
-        pre: code.
-          table.table.table-striped
-            ...
+        .component-subsection
+          h3 Basic 基本
+          .example
+            table.table
+              caption 表格標題
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table
+              ...
 
-        h3 Bordered table 有框式表格
-        .example
-          table.table.table-bordered
-            thead
-              tr
-                th #
-                th First Name
-                th Last Name
-                th Username
-            tbody
-              tr
-                td 1
-                td Mark
-                td Otto
-                td @mdo
-              tr
-                td 2
-                td Jacob
-                td Thornton
-                td @fat
-              tr
-                td 3
-                td Larry
-                td the Bird
-                td @twitter
-        pre: code.
-          table.table.table-bordered
-            ...
+        .component-subsection
+          h3 Striped rows 橫紋式表格
+          .example
+            table.table.table-striped
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-striped
+              ...
 
-        h3 Hover rows 移入行
-        .example
-          table.table.table-hover
-            thead
-              tr
-                th #
-                th First Name
-                th Last Name
-                th Username
-            tbody
-              tr
-                td 1
-                td Mark
-                td Otto
-                td @mdo
-              tr
-                td 2
-                td Jacob
-                td Thornton
-                td @fat
-              tr
-                td 3
-                td Larry
-                td the Bird
-                td @twitter
-        pre: code.
-          table.table.table-hover
-            ...
+        .component-subsection
+          h3 Bordered table 有框式表格
+          .example
+            table.table.table-bordered
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-bordered
+              ...
 
-        h3 Condensed table 緊湊表格
-        p Padding 減為一半
-        .example
-          table.table.table-condensed
-            thead
-              tr
-                th #
-                th First Name
-                th Last Name
-                th Username
-            tbody
-              tr
-                td 1
-                td Mark
-                td Otto
-                td @mdo
-              tr
-                td 2
-                td Jacob
-                td Thornton
-                td @fat
-              tr
-                td 3
-                td Larry
-                td the Bird
-                td @twitter
-        pre: code.
-          table.table.table-condensed
-            ...
-        h3 Contextual classes 狀態類別
-        .example
-          table.table
-            thead
-              tr
-                th #
-                th &lt;tr&gt; class
-            tbody
-              tr
-                td 1
-                td
-              tr.active
-                td 2
-                td active
-              tr.success
-                td 3
-                td success
-              tr.info
-                td 4
-                td info
-              tr.warning
-                td 5
-                td warning
-              tr.danger
-                td 6
-                td danger
+        .component-subsection
+          h3 Hover rows 移入行
+          .example
+            table.table.table-hover
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-hover
+              ...
+
+        .component-subsection
+          h3 Condensed table 緊湊表格
+          p Padding 減為一半
+          .example
+            table.table.table-condensed
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-condensed
+              ...
+
+        .component-subsection
+          h3 Contextual classes 狀態類別
+          .example
+            table.table
+              thead
+                tr
+                  th #
+                  th &lt;tr&gt; class
+              tbody
+                tr
+                  td 1
+                  td
+                tr.active
+                  td 2
+                  td active
+                tr.success
+                  td 3
+                  td success
+                tr.info
+                  td 4
+                  td info
+                tr.warning
+                  td 5
+                  td warning
+                tr.danger
+                  td 6
+                  td danger
 
 
       section#forms.component-section
         h2 Forms 表單
+
+        .component-subsection
+          h3 Basic example 基本表單
+          .example
+            form
+              .form-group
+                label( for="example-input-email-1" ) Email address
+                input#example-input-email-1.form-control( type="email" placeholder="Email" )
+              .form-group
+                label( for="example-input-password-1" ) Password
+                input#example-input-password-1.form-control( type="password" placeholder="Password" )
+              .form-group
+                label( for="example-input-file-1" ) File input
+                input#example-input-file-1( type="file" )
+                p.help-block Example block-level help text here.
+              .checkbox
+                label
+                  input( type="checkbox" )
+                  | Check me out
+              button.btn.btn-default( type="submit" ) Submit
+          pre: code.
+            form
+              .form-group
+                label( for="example-input-email-1" ) Email address
+                input#example-input-email-1.form-control( type="email" placeholder="Email" )
+              .form-group
+                label( for="example-input-password-1" ) Password
+                input#example-input-password-1.form-control( type="password" placeholder="Password" )
+              .form-group
+                label( for="example-input-file-1" ) File input
+                input#example-input-file-1( type="file" )
+                p.help-block Example block-level help text here.
+              .checkbox
+                label
+                  input( type="checkbox" )
+                  | Check me out
+              button.btn.btn-default( type="submit" ) Submit
+
+        .component-subsection
+          h3 Inline form 行內表單
+          .example
+            form.form-inline
+              .form-group
+                label( for="example-input-name-2" ) Name
+                input#example-input-name-2.form-control( type="text" placeholder="Jhon Doe")
+              .form-group
+                label( for="example-input-email-2" ) Email
+                input#example-input-email-2.form-control( type="email" placeholder="john.doe@example.com")
+              button.btn.btn-default( type="submit" ) Send invitation
+          pre: code.
+            form.form-inline
+              .form-group
+                label( for="example-input-name-2" ) Name
+                input#example-input-name-2.form-control( type="text" placeholder="Jhon Doe")
+              .form-group
+                label( for="example-input-email-2" ) Email
+                input#example-input-email-2.form-control( type="email" placeholder="john.doe@example.com")
+              button.btn.btn-default( type="submit" ) Send invitation
+
+        .component-subsection
+          h3 Horizontal form 水平表單
+          .example
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label( for="example-input-email-3" ) Email address
+                .col-sm-20
+                  input#example-input-email-3.form-control( type="email" placeholder="Email" )
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-3" ) Password
+                .col-sm-20
+                  input#example-input-password-3.form-control( type="password" placeholder="Password" )
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  .checkbox
+                    label
+                      input( type="checkbox" )
+                      |  Remember me
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  button.btn.btn-default( type="submit" ) Sign in
+          pre: code.
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label( for="example-input-email-3" ) Email address
+                .col-sm-20
+                  input#example-input-email-3.form-control( type="email" placeholder="Email" )
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-3" ) Password
+                .col-sm-20
+                  input#example-input-password-3.form-control( type="password" placeholder="Password" )
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  .checkbox
+                    label
+                      input( type="checkbox" )
+                      |  Remember me
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  button.btn.btn-default( type="submit" ) Sign in
+
+        .component-subsection
+          h3 Supported controls 支援的控制項
+
+          h4 Input
+          p.
+            最常見的 form 控制項、基於文字的 input 欄位，也包含支援所有 HTML5 輸入類型：<code>text</code>、<code>password</code>、<code>datetime</code>、<code>datetime-local</code>、<code>date</code>、<code>month</code>、<code>time</code>、<code>week</code>、<code>number</code>、<code>email</code>、<code>url</code>、<code>search</code>、<code>tel</code> 和 <code>color</code>。
+
+          h4 Textarea
+          .example
+            textarea.form-control( rows="3" )
+          pre: code textarea.form-control( rows="3" )
+
+          h4 Checkboxes and radios
+
+          h5 Default (stacked)
+          .example
+            .checkbox
+              label
+                input( type="checkbox" value="" )
+                | Option one is this and that&mdash;be sure to include why it's great
+            .checkbox.disabled
+              label
+                input( type="checkbox" value="" disabled)
+                | Option two is disabled
+            | <br>
+            .radio
+              label
+                input#option-radios-1( type="radio" name="optionRadios" value="option1" checked)
+                | Option one is this and that&mdash;be sure to include why it's great
+            .radio
+              label
+                input#option-radios-2( type="radio" name="optionRadios" value="option2" )
+                | Option two can be something else and selecting it will deselect option one
+            .radio.disabled
+              label
+                input#option-radios-3( type="radio" name="optionRadios" value="option3" disabled)
+                | Option three is disabled
+          pre: code.
+            .checkbox
+              label
+                input( type="checkbox" value="" )
+                | Option one is this and that&mdash;be sure to include why it's great
+            .checkbox.disabled
+              label
+                input( type="checkbox" value="" disabled)
+                | Option two is disabled
+
+            .radio
+              label
+                input#option-radios-1( type="radio" name="optionRadios" value="option1" checked)
+                | Option one is this and that&mdash;be sure to include why it's great
+            .radio
+              label
+                input#option-radios-2( type="radio" name="optionRadios" value="option2" )
+                | Option two can be something else and selecting it will deselect option one
+            .radio.disabled
+              label
+                input#option-radios-3( type="radio" name="optionRadios" value="option3" disabled)
+                | Option three is disabled
+
+          h5 Inline checkboxes and radios
+          .example
+            label.checkbox-inline
+              input#inline-checkbox-1( type="checkbox" value="option1")
+              |  1
+            label.checkbox-inline
+              input#inline-checkbox-2( type="checkbox" value="option2")
+              |  2
+            label.checkbox-inline
+              input#inline-checkbox-3( type="checkbox" value="option3")
+              |  3
+            | <br><br>
+            label.radio-inline
+              input#inline-radil-1( type="radio" name="inlineRadioOptions" value="option1" )
+              |  1
+            label.radio-inline
+              input#inline-radil-2( type="radio" name="inlineRadioOptions" value="option2" )
+              |  2
+            label.radio-inline
+              input#inline-radil-3( type="radio" name="inlineRadioOptions" value="option3" )
+              |  3
+          pre: code.
+            label.checkbox-inline
+              input#inline-checkbox-1( type="checkbox" value="option1")
+              |  1
+            label.checkbox-inline
+              input#inline-checkbox-2( type="checkbox" value="option2")
+              |  2
+            label.checkbox-inline
+              input#inline-checkbox-3( type="checkbox" value="option3")
+              |  3
+
+            label.radio-inline
+              input#inline-radil-1( type="radio" name="inlineRadioOptions" value="option1" )
+              |  1
+            label.radio-inline
+              input#inline-radil-2( type="radio" name="inlineRadioOptions" value="option2" )
+              |  2
+            label.radio-inline
+              input#inline-radil-3( type="radio" name="inlineRadioOptions" value="option3" )
+              |  3
+
+          h5 Select
+          .example
+            select.form-control
+              option 1
+              option 2
+              option 3
+              option 4
+              option 5
+          pre: code.
+            select.form-control
+              option 1
+              option 2
+              option 3
+              option 4
+              option 5
+
+        .component-subsection
+          h3 Static control 靜態控制
+          .example
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label Email address
+                .col-sm-20
+                  p.form-control-static email@example.com
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-4" ) Password
+                .col-sm-20
+                  input#example-input-password-4.form-control( type="password" placeholder="Password" )
+          pre: code.
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label Email address
+                .col-sm-20
+                  p.form-control-static email@example.com
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-4" ) Password
+                .col-sm-20
+                  input#example-input-password-4.form-control( type="password" placeholder="Password" )
+
+        .component-subsection
+          h3 Focus state 對焦狀態
+          p 點擊下方欄位顯示 Focus state
+          .example
+            form
+              input.form-control( type="text" value="Demonstrative focus state" )
+
+        .component-subsection
+          h3 Disabled state 禁用狀態
+          .example
+            form
+              input.form-control( type="text" placeholder="Disabled input here..." disabled )
+
+        .component-subsection
+          h3 Validation states 驗證狀態
+          p
+            | 除了顏色外，也可加上 icon 輔助顯示驗證狀態，可參考 
+            a( href="http://getbootstrap.com/css/#forms-control-validation" ) Bootstrap form validation states
+            | 。
+          .example
+            .form-group.has-success
+              label.control-label( for="input-success-1" ) Input with success
+              input#input-success-1.form-control( type="text" )
+            .form-group.has-warning
+              label.control-label( for="input-warning-1" ) Input with warning
+              input#input-warning-1.form-control( type="text" )
+            .form-group.has-error
+              label.control-label( for="input-error-1" ) Input with error
+              input#input-error-1.form-control( type="text" )
+            .has-success
+              .checkbox
+                label
+                  input#checkbox-success( type="checkbox" value="option1" )
+                  | Checkbox with success
+              .checkbox
+                label
+                  input#checkbox-warning( type="checkbox" value="option2" )
+                  | Checkbox with warning
+              .checkbox
+                label
+                  input#checkbox-error( type="checkbox" value="option3" )
+                  | Checkbox with error
+          pre: code.
+            .form-group.has-success
+              label.control-label( for="input-success-1" ) Input with success
+              input#input-success-1.form-control( type="text" )
+            .form-group.has-warning
+              label.control-label( for="input-warning-1" ) Input with warning
+              input#input-warning-1.form-control( type="text" )
+            .form-group.has-error
+              label.control-label( for="input-error-1" ) Input with error
+              input#input-error-1.form-control( type="text" )
+            .has-success
+              .checkbox
+                label
+                  input#checkbox-success( type="checkbox" value="option1" )
+                  | Checkbox with success
+              .checkbox
+                label
+                  input#checkbox-warning( type="checkbox" value="option2" )
+                  | Checkbox with warning
+              .checkbox
+                label
+                  input#checkbox-error( type="checkbox" value="option3" )
+                  | Checkbox with error
+
+        .component-subsection
+          h3 Control sizing 控制大小
+
+          h4 Height sizing
+          .example
+            input.form-control.input-lg( type="text" placeholder=".input-lg" )
+            | <br>
+            input.form-control( type="text" placeholder=".Default input" )
+            | <br>
+            input.form-control.input-sm( type="text" placeholder="..input-sm" )
+            | <br>
+            select.form-control.input-lg
+              option( value="" ) .input-lg
+            | <br>
+            select.form-control
+              option( value="" ) Default select
+            | <br>
+            select.form-control.input-sm
+              option( value="" ) .input-sm
+          pre: code.
+            input.form-control.input-lg( type="text" placeholder=".input-lg" )
+            input.form-control( type="text" placeholder=".Default input" )
+            input.form-control.input-sm( type="text" placeholder="..input-sm" )
+
+            select.form-control.input-lg
+              option( value="" ) .input-lg
+            select.form-control
+              option( value="" ) Default select
+            select.form-control.input-sm
+              option( value="" ) .input-sm
+
+          h4 Horizontal form group sizes
+          .example
+            form.form-horizontal
+              .form-group.form-group-lg
+                label.col-sm-4.control-label( for="form-group-input-large" ) Large label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-large" placeholder="Large input" )
+              .form-group.form-group-sm
+                label.col-sm-4.control-label( for="form-group-input-small" ) Small label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-small" placeholder="Small input" )
+          pre: code.
+            form.form-horizontal
+              .form-group.form-group-lg
+                label.col-sm-4.control-label( for="form-group-input-large" ) Large label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-large" placeholder="Large input" )
+              .form-group.form-group-sm
+                label.col-sm-4.control-label( for="form-group-input-small" ) Small label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-small" placeholder="Small input" )
+
+          h4 Column sizing
+          .example
+            .row
+              .col-xs-4
+                input.form-control( type="text" placeholder=".col-xs-4" )
+              .col-xs-6
+                input.form-control( type="text" placeholder=".col-xs-6" )
+              .col-xs-8
+                input.form-control( type="text" placeholder=".col-xs-8" )
+          pre: code.
+            .row
+              .col-xs-4
+                input.form-control( type="text" placeholder=".col-xs-4" )
+              .col-xs-6
+                input.form-control( type="text" placeholder=".col-xs-6" )
+              .col-xs-8
+                input.form-control( type="text" placeholder=".col-xs-8" )
+
 
       section#components.component-section
         h2 Components 其他元件
