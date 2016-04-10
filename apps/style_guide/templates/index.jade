@@ -15,11 +15,10 @@ block body
         ul.list-unstyled
           li: a( href="#overview" ) Overview 總覽
           li: a( href="#typography" ) Typography 字體
-          li: a( href="#grids" )  Grids 網格
+          li: a( href="#grids" )  Grid System 網格
           li: a( href="#colors" ) Colors 顏色
           li: a( href="#buttons" ) Buttons 按鈕
           li: a( href="#tables" ) Tables 表格
-          li: a( href="#panels" ) Panels 面板
           li: a( href="#forms" ) Forms 表單
           li: a( href="#components" ) Components 其他元件
 
@@ -34,14 +33,23 @@ block body
         h3 Twitter Bootstrap
         | Pickee 採用了 
         a( href='http://www.getbootstrap.com' ) Twitter Bootstrap 
-        | 的基本 Grid Syetem 以及一些基本 css。
+        | 的部分基本元素，包含 
+        a( href='http://necolas.github.io/normalize.css/') Normalize.css 
+        | 、Grid Syetem 以及一些基本 css。
 
       section#typography.component-section
         h2#typography Typography 字體
+
+        .component-subsection
+        h3 Chinese typography 中文排版
         | Pickee 是以中文為主的網站，中文字型以黑體為主，依序為蘋方黑體、冬青黑體、微軟正黑體。英文字體為Helvetica Neue、Helvetica、Arial。
         pre
           code
             | font-family: "Helvetica Neue", Helvetica, Arial, PingFangTC-Ultralight, "Hiragino Sans GB", "\5FAE\8EDF\6B63\9ED1\9AD4", sans-serif;
+
+        | 考慮到中文排版的閱讀舒適性，行距設定（lien-height）為1.8。<br>  
+        | 因中文不適合使用斜體，取消了 <code>&lt;em&gt;</code>、 <code>&lt;cite&gt;</code> 標籤的斜體呈現設定 。
+
         .component-subsection
           h3 Headings 標題
           .example
@@ -51,9 +59,43 @@ block body
             h4 Header 4 標題四 Pickee中文字體，精挑細選。
             h5 Header 5 標題五 Pickee中文字體，精挑細選。
             h6 Header 6 標題六 Pickee中文字體，精挑細選。
+          pre: code.
+            h1 Header 1 標題一 Pickee中文字體，精挑細選。
+            h2 Header 2 標題二 Pickee中文字體，精挑細選。
+            h3 Header 3 標題三 Pickee中文字體，精挑細選。
+            h4 Header 4 標題四 Pickee中文字體，精挑細選。
+            h5 Header 5 標題五 Pickee中文字體，精挑細選。
+            h6 Header 6 標題六 Pickee中文字體，精挑細選。
+          | 加上副標題
+          .example
+            h1 Header 1 標題一 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h2 Header 2 標題二 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h3 Header 3 標題三 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h4 Header 4 標題四 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h5 Header 5 標題五 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h6 Header 6 標題六 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+          pre: code.
+            h1 Header 1 標題一 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h2 Header 2 標題二 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h3 Header 3 標題三 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h4 Header 4 標題四 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h5 Header 5 標題五 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+            h6 Header 6 標題六 Pickee中文字體，精挑細選。
+              small 副標題，精挑細選。
+
         .component-subsection
           h3 Body copy 內文
-          | 考慮到中文排版的閱讀舒適性，行距設定（lien-height）為1.8。且取消 &lt;em&gt; 標籤的斜體。
           pre
             code
               | em { font-style: normal; }
@@ -64,31 +106,273 @@ block body
             p
               | 内文 Pickee 中文字体，精挑细选。
               | iPhone，是<u>苹果公司</u>旗下研发的移动电话系列，它搭载苹果公司研发的iOS<small>（以前是OS）</small>手机操作系统[13]。第一代iPhone于2007年1月9日由当时苹果公司CEO的<strong>史蒂夫·乔布斯</strong>发布[14]，并在同年6月29日正式发售[15][16]。2015年9月9日，苹果公司在美国旧金山举行新产品发布会上，推出第九代产品iPhone 6S，于同年9月25日正式发售。苹果公司旗下智能手机iPhone系列，以个别推出的款式计算，可以是全球销量第一大的智能手机。订定计画。
+          pre: code.
+            p ...
+
         .component-subsection
-          h3 Inline text elements
-          h4 Marked text
-          h4 Deleted text
-          h4 Strikethrough text
-          h4 Inserted text
-          h4 Underlined text
-          h4 Small text
-          h4 Bold
-          h4 Italics
-          h4 Alignment classes
-          h4 Transformation classes
+          h3 Lead body copy 前導內文
+          | 以較大的字體凸顯內文段落
+          .example
+            p.lead iPhone，是蘋果公司旗下研發的行動電話系列，它搭載蘋果公司研發的iOS（以前是OS）手機作業系统。
+          pre: code.
+            p.lead ...
+
         .component-subsection
-          h3 Blockquotes
+          h3 Inline text elements 行內文字元素
+          h4 Marked text 標記文字
+          .example
+            | 你可以使用 mark 標籤以 <mark>醒目提示</mark> 文字內容。
+          pre: code.
+            你可以使用 mark 標籤以 &lt;mark&gt;醒目提示&lt;/mark&gt; 文字內容。
+          h4 Deleted text 刪除文字
+          .example
+            | <del>此行文字是要被視為已刪除文字。</del>
+          pre: code.
+            &lt;del&gt;此行文字是要被視為已刪除文字。&lt;/del&gt;
+          h4 Strikethrough text 刪除線效果
+          .example
+            | <s>用於指出此文字區塊已經不再和段落有相關聯。</s>
+          pre: code.
+            &lt;s&gt;用於指出此文字區塊已經不再和段落有相關聯。&lt;/s&gt;
+          h4 Inserted text 插入文字
+          .example
+            | <ins>此行文字是要被視為已新加入的文字。</ins>
+          pre: code.
+            &lt;ins&gt;此行文字是要被視為已新加入的文字。&lt;/ins&gt;
+          p
+            | 關於 <code>&lt;del&gt;</code>、<code>&lt;s&gt;</code>、<code>&lt;ins&gt;</code> 的使用，可參考
+            a( href='http://html5doctor.com/ins-del-s/' ) 此篇文章
+            | 。
+          h4 Underlined text 底線文字
+          .example
+            | <u>此行文將會呈現底線效果。</u>
+          pre: code.
+            &lt;u&gt;此行文將會呈現底線效果。&lt;/u&gt;
+          h4 Small text 較小文字
+          p 以字體大小的 85% 來呈現，亦可使用 .small 類別來達到此效果。
+          .example
+            | <small>較小文字</small>
+          pre: code.
+            &lt;small&gt;較小文字&lt;/small&gt;
+          h4 Bold 粗體
+          .example
+            | <strong>粗體文字</strong>
+          pre: code.
+            &lt;strong&gt;粗體文字&lt;/strong&gt;
+          h4 Italics 斜體
+          p 因為中文並不適用斜體文字，因此取消了 <code>&lt;em&gt;</code> 標籤的斜體效果。若要於其他語言文字中使用斜體文字，可用 <code>&lt;i&gt;</code> 標籤。
+          .example
+            | <i>This is italic</i>
+          pre: code.
+            &lt;i&gt;This is italic&lt;/i&gt;
+
         .component-subsection
-          h3 Lists
-          h4 Unordered
-          h4 Ordered
-          h4 Unstyled
-          h4 Inline
-          h4 Description
-          h4 Horizontal description
+          h3 Alignment classes 對齊類別
+          .example
+            p.text-left 靠左對齊文字。
+            p.text-center 置中對齊文字。
+            p.text-right 靠右對齊文字。
+            p.text-justify 平均對齊文字。
+            p.text-nowrap 不換行文字。
+          pre: code.
+            p.text-left 靠左對齊文字。
+            p.text-center 置中對齊文字。
+            p.text-right 靠右對齊文字。
+            p.text-justify 平均對齊文字。
+            p.text-nowrap 不換行文字。
+
+        .component-subsection
+          h3 Transformation classes 轉換類別
+          .example
+            p.text-lowercase Lowercased text.（全小寫）
+            p.text-uppercase Uppercased text.（全大寫）
+            p.text-capitalize Capitalized text.（字首大寫）
+          pre: code.
+            p.text-lowercase Lowercased text.（全小寫）
+            p.text-uppercase Uppercased text.（全大寫）
+            p.text-capitalize Capitalized text.（字首大寫）
+
+        .component-subsection
+          h3 Abbreviations 縮寫
+          p
+            | 想看完整的內容，可以把滑鼠停留在縮寫詞上，但 <code>&lt;abbr&gt;</code> 元素必須包含 <code>title</code> 屬性。
+          .example
+            abbr( title="attribute") attr
+
+        .component-subsection
+          h3 Addresses 地址
+          .example
+            address
+              <strong>Twitter, Inc.</strong><br>
+              | 795 Folsom Ave, Suite 600<br>
+              | San Francisco, CA 94107<br>
+              <abbr title="Phone">P:</abbr> (123) 456-7890
+
+            address
+              <strong>Full Name</strong><br>
+              a( href="mailto:#" ) first.last@example.com
+
+        .component-subsection
+          h3 Blockquotes 引用
+          .example
+            blockquote
+              p 少小離家老大回，鄉音無改鬢毛催。兒童相見不相識，笑問客從何處來。
+              footer 回鄉偶書，作者：<cite title="Source Title">賀知章</cite>
+          pre: code.
+            blockquote
+              p 少小離家老大回，鄉音無改鬢毛催。兒童相見不相識，笑問客從何處來。
+              footer 回鄉偶書，作者：<cite title="Source Title">賀知章</cite>
+          .example
+            blockquote.blockquote-reverse
+              p 少小離家老大回，鄉音無改鬢毛催。兒童相見不相識，笑問客從何處來。
+              footer 回鄉偶書，作者：<cite title="Source Title">賀知章</cite>
+          pre: code.
+            blockquote.blockquote-reverse
+              p 少小離家老大回，鄉音無改鬢毛催。兒童相見不相識，笑問客從何處來。
+              footer 回鄉偶書，作者：<cite title="Source Title">賀知章</cite>
+
+        .component-subsection
+          h3 Lists 清單
+
+          h4 Unordered 無序清單
+          .example
+            ul
+              li 無序清單
+              li 無序清單
+              li 無序清單
+          pre: code.
+            ul
+              li 無序清單
+              li 無序清單
+              li 無序清單
+
+          h4 Ordered 有序清單
+          .example
+            ol
+              li 有序清單
+              li 有序清單
+              li 有序清單
+          pre: code.
+            ol
+              li 有序清單
+              li 有序清單
+              li 有序清單
+
+          h4 Unstyled 無樣式清單
+          p 僅對直接子清單有效
+          .example
+            ul.list-unstyled
+              li 無樣式清單
+              li 無樣式清單
+              li 無樣式清單
+                ul
+                  li 無樣式清單
+                  li 無樣式清單
+                  li 無樣式清單
+          pre: code.
+            ul.list-unstyled
+              li 無樣式清單
+              li 無樣式清單
+              li 無樣式清單
+                ul
+                  li 無樣式清單
+                  li 無樣式清單
+                  li 無樣式清單
+
+          h4 Inline 行內清單
+          .example
+            ul.list-inline
+              li 行內清單
+              li 行內清單
+              li 行內清單
+          pre: code.
+            ul.list-inline
+              li 行內清單
+              li 行內清單
+              li 行內清單
+          h4 Description 描述清單
+          .example
+            dl
+              dt 名稱
+              dd 描述內容
+              dt 名稱
+              dd 描述內容
+          pre: code.
+            dl
+              dt 名稱
+              dd 描述內容
+              dt 名稱
+              dd 描述內容
+          h4 Horizontal description 水平描述清單
+          .example
+            dl.dl-horizontal
+              dt 名稱
+              dd 描述內容
+              dt 名稱
+              dd 描述內容
+          pre: code.
+            dl.dl-horizontal
+              dt 名稱
+              dd 描述內容
+              dt 名稱
+              dd 描述內容
 
       section#grids.component-section
         h2 Grid System 網格
+        h3 Bootstrap Grid System
+        | Pickee 採用了 
+        a( href="http://getbootstrap.com/css/#grid" ) Bootstrap 的 Grid System
+        | 。並改用 24 column。
+        h4 Example
+        .row.grid-example-row.show-grid
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+          .col-xs-2 .col-xs-2
+
+        .row.grid-example-row.show-grid
+          .col-xs-4 .col-xs-4
+          .col-xs-4 .col-xs-4
+          .col-xs-8 .col-xs-8
+          .col-xs-8 .col-xs-8
+
+        .row.grid-example-row.show-grid
+          .col-xs-12 .col-xs-12
+          .col-xs-12 .col-xs-12
+
+        p Grid 內左右皆有 10px 的 padding，對 grid 的子元素來說，可以當做有 20px 的 gutter 。
+
+        .row.grid-example-row
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+          .col-xs-2: .grid-content
+
+        .row.grid-example-row
+          .col-xs-4: .grid-content
+          .col-xs-4: .grid-content
+          .col-xs-8: .grid-content
+          .col-xs-8: .grid-content
+
+        .row.grid-example-row
+          .col-xs-12: .grid-content
+          .col-xs-12: .grid-content
 
       section#colors.component-section
         h2 Colors 顏色
@@ -99,8 +383,567 @@ block body
       section#tables.component-section
         h2 Tables 表格
 
+        .component-subsection
+          h3 Basic 基本
+          .example
+            table.table
+              caption 表格標題
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table
+              ...
+
+        .component-subsection
+          h3 Striped rows 橫紋式表格
+          .example
+            table.table.table-striped
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-striped
+              ...
+
+        .component-subsection
+          h3 Bordered table 有框式表格
+          .example
+            table.table.table-bordered
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-bordered
+              ...
+
+        .component-subsection
+          h3 Hover rows 移入行
+          .example
+            table.table.table-hover
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-hover
+              ...
+
+        .component-subsection
+          h3 Condensed table 緊湊表格
+          p Padding 減為一半
+          .example
+            table.table.table-condensed
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Last Name
+                  th Username
+              tbody
+                tr
+                  td 1
+                  td Mark
+                  td Otto
+                  td @mdo
+                tr
+                  td 2
+                  td Jacob
+                  td Thornton
+                  td @fat
+                tr
+                  td 3
+                  td Larry
+                  td the Bird
+                  td @twitter
+          pre: code.
+            table.table.table-condensed
+              ...
+
+        .component-subsection
+          h3 Contextual classes 狀態類別
+          .example
+            table.table
+              thead
+                tr
+                  th #
+                  th &lt;tr&gt; class
+              tbody
+                tr
+                  td 1
+                  td
+                tr.active
+                  td 2
+                  td active
+                tr.success
+                  td 3
+                  td success
+                tr.info
+                  td 4
+                  td info
+                tr.warning
+                  td 5
+                  td warning
+                tr.danger
+                  td 6
+                  td danger
+
+
       section#forms.component-section
         h2 Forms 表單
+
+        .component-subsection
+          h3 Basic example 基本表單
+          .example
+            form
+              .form-group
+                label( for="example-input-email-1" ) Email address
+                input#example-input-email-1.form-control( type="email" placeholder="Email" )
+              .form-group
+                label( for="example-input-password-1" ) Password
+                input#example-input-password-1.form-control( type="password" placeholder="Password" )
+              .form-group
+                label( for="example-input-file-1" ) File input
+                input#example-input-file-1( type="file" )
+                p.help-block Example block-level help text here.
+              .checkbox
+                label
+                  input( type="checkbox" )
+                  | Check me out
+              button.btn.btn-default( type="submit" ) Submit
+          pre: code.
+            form
+              .form-group
+                label( for="example-input-email-1" ) Email address
+                input#example-input-email-1.form-control( type="email" placeholder="Email" )
+              .form-group
+                label( for="example-input-password-1" ) Password
+                input#example-input-password-1.form-control( type="password" placeholder="Password" )
+              .form-group
+                label( for="example-input-file-1" ) File input
+                input#example-input-file-1( type="file" )
+                p.help-block Example block-level help text here.
+              .checkbox
+                label
+                  input( type="checkbox" )
+                  | Check me out
+              button.btn.btn-default( type="submit" ) Submit
+
+        .component-subsection
+          h3 Inline form 行內表單
+          .example
+            form.form-inline
+              .form-group
+                label( for="example-input-name-2" ) Name
+                input#example-input-name-2.form-control( type="text" placeholder="Jhon Doe")
+              .form-group
+                label( for="example-input-email-2" ) Email
+                input#example-input-email-2.form-control( type="email" placeholder="john.doe@example.com")
+              button.btn.btn-default( type="submit" ) Send invitation
+          pre: code.
+            form.form-inline
+              .form-group
+                label( for="example-input-name-2" ) Name
+                input#example-input-name-2.form-control( type="text" placeholder="Jhon Doe")
+              .form-group
+                label( for="example-input-email-2" ) Email
+                input#example-input-email-2.form-control( type="email" placeholder="john.doe@example.com")
+              button.btn.btn-default( type="submit" ) Send invitation
+
+        .component-subsection
+          h3 Horizontal form 水平表單
+          .example
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label( for="example-input-email-3" ) Email address
+                .col-sm-20
+                  input#example-input-email-3.form-control( type="email" placeholder="Email" )
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-3" ) Password
+                .col-sm-20
+                  input#example-input-password-3.form-control( type="password" placeholder="Password" )
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  .checkbox
+                    label
+                      input( type="checkbox" )
+                      |  Remember me
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  button.btn.btn-default( type="submit" ) Sign in
+          pre: code.
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label( for="example-input-email-3" ) Email address
+                .col-sm-20
+                  input#example-input-email-3.form-control( type="email" placeholder="Email" )
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-3" ) Password
+                .col-sm-20
+                  input#example-input-password-3.form-control( type="password" placeholder="Password" )
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  .checkbox
+                    label
+                      input( type="checkbox" )
+                      |  Remember me
+              .form-group
+                .col-sm-offset-4.col-sm-20
+                  button.btn.btn-default( type="submit" ) Sign in
+
+        .component-subsection
+          h3 Supported controls 支援的控制項
+
+          h4 Input
+          p.
+            最常見的 form 控制項、基於文字的 input 欄位，也包含支援所有 HTML5 輸入類型：<code>text</code>、<code>password</code>、<code>datetime</code>、<code>datetime-local</code>、<code>date</code>、<code>month</code>、<code>time</code>、<code>week</code>、<code>number</code>、<code>email</code>、<code>url</code>、<code>search</code>、<code>tel</code> 和 <code>color</code>。
+
+          h4 Textarea
+          .example
+            textarea.form-control( rows="3" )
+          pre: code textarea.form-control( rows="3" )
+
+          h4 Checkboxes and radios
+
+          h5 Default (stacked)
+          .example
+            .checkbox
+              label
+                input( type="checkbox" value="" )
+                | Option one is this and that&mdash;be sure to include why it's great
+            .checkbox.disabled
+              label
+                input( type="checkbox" value="" disabled)
+                | Option two is disabled
+            | <br>
+            .radio
+              label
+                input#option-radios-1( type="radio" name="optionRadios" value="option1" checked)
+                | Option one is this and that&mdash;be sure to include why it's great
+            .radio
+              label
+                input#option-radios-2( type="radio" name="optionRadios" value="option2" )
+                | Option two can be something else and selecting it will deselect option one
+            .radio.disabled
+              label
+                input#option-radios-3( type="radio" name="optionRadios" value="option3" disabled)
+                | Option three is disabled
+          pre: code.
+            .checkbox
+              label
+                input( type="checkbox" value="" )
+                | Option one is this and that&mdash;be sure to include why it's great
+            .checkbox.disabled
+              label
+                input( type="checkbox" value="" disabled)
+                | Option two is disabled
+
+            .radio
+              label
+                input#option-radios-1( type="radio" name="optionRadios" value="option1" checked)
+                | Option one is this and that&mdash;be sure to include why it's great
+            .radio
+              label
+                input#option-radios-2( type="radio" name="optionRadios" value="option2" )
+                | Option two can be something else and selecting it will deselect option one
+            .radio.disabled
+              label
+                input#option-radios-3( type="radio" name="optionRadios" value="option3" disabled)
+                | Option three is disabled
+
+          h5 Inline checkboxes and radios
+          .example
+            label.checkbox-inline
+              input#inline-checkbox-1( type="checkbox" value="option1")
+              |  1
+            label.checkbox-inline
+              input#inline-checkbox-2( type="checkbox" value="option2")
+              |  2
+            label.checkbox-inline
+              input#inline-checkbox-3( type="checkbox" value="option3")
+              |  3
+            | <br><br>
+            label.radio-inline
+              input#inline-radil-1( type="radio" name="inlineRadioOptions" value="option1" )
+              |  1
+            label.radio-inline
+              input#inline-radil-2( type="radio" name="inlineRadioOptions" value="option2" )
+              |  2
+            label.radio-inline
+              input#inline-radil-3( type="radio" name="inlineRadioOptions" value="option3" )
+              |  3
+          pre: code.
+            label.checkbox-inline
+              input#inline-checkbox-1( type="checkbox" value="option1")
+              |  1
+            label.checkbox-inline
+              input#inline-checkbox-2( type="checkbox" value="option2")
+              |  2
+            label.checkbox-inline
+              input#inline-checkbox-3( type="checkbox" value="option3")
+              |  3
+
+            label.radio-inline
+              input#inline-radil-1( type="radio" name="inlineRadioOptions" value="option1" )
+              |  1
+            label.radio-inline
+              input#inline-radil-2( type="radio" name="inlineRadioOptions" value="option2" )
+              |  2
+            label.radio-inline
+              input#inline-radil-3( type="radio" name="inlineRadioOptions" value="option3" )
+              |  3
+
+          h5 Select
+          .example
+            select.form-control
+              option 1
+              option 2
+              option 3
+              option 4
+              option 5
+          pre: code.
+            select.form-control
+              option 1
+              option 2
+              option 3
+              option 4
+              option 5
+
+        .component-subsection
+          h3 Static control 靜態控制
+          .example
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label Email address
+                .col-sm-20
+                  p.form-control-static email@example.com
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-4" ) Password
+                .col-sm-20
+                  input#example-input-password-4.form-control( type="password" placeholder="Password" )
+          pre: code.
+            form.form-horizontal
+              .form-group
+                label.col-sm-4.control-label Email address
+                .col-sm-20
+                  p.form-control-static email@example.com
+              .form-group
+                label.col-sm-4.control-label( for="example-input-password-4" ) Password
+                .col-sm-20
+                  input#example-input-password-4.form-control( type="password" placeholder="Password" )
+
+        .component-subsection
+          h3 Focus state 對焦狀態
+          p 點擊下方欄位顯示 Focus state
+          .example
+            form
+              input.form-control( type="text" value="Demonstrative focus state" )
+
+        .component-subsection
+          h3 Disabled state 禁用狀態
+          .example
+            form
+              input.form-control( type="text" placeholder="Disabled input here..." disabled )
+
+        .component-subsection
+          h3 Validation states 驗證狀態
+          p
+            | 除了顏色外，也可加上 icon 輔助顯示驗證狀態，可參考 
+            a( href="http://getbootstrap.com/css/#forms-control-validation" ) Bootstrap form validation states
+            | 。
+          .example
+            .form-group.has-success
+              label.control-label( for="input-success-1" ) Input with success
+              input#input-success-1.form-control( type="text" )
+            .form-group.has-warning
+              label.control-label( for="input-warning-1" ) Input with warning
+              input#input-warning-1.form-control( type="text" )
+            .form-group.has-error
+              label.control-label( for="input-error-1" ) Input with error
+              input#input-error-1.form-control( type="text" )
+            .has-success
+              .checkbox
+                label
+                  input#checkbox-success( type="checkbox" value="option1" )
+                  | Checkbox with success
+              .checkbox
+                label
+                  input#checkbox-warning( type="checkbox" value="option2" )
+                  | Checkbox with warning
+              .checkbox
+                label
+                  input#checkbox-error( type="checkbox" value="option3" )
+                  | Checkbox with error
+          pre: code.
+            .form-group.has-success
+              label.control-label( for="input-success-1" ) Input with success
+              input#input-success-1.form-control( type="text" )
+            .form-group.has-warning
+              label.control-label( for="input-warning-1" ) Input with warning
+              input#input-warning-1.form-control( type="text" )
+            .form-group.has-error
+              label.control-label( for="input-error-1" ) Input with error
+              input#input-error-1.form-control( type="text" )
+            .has-success
+              .checkbox
+                label
+                  input#checkbox-success( type="checkbox" value="option1" )
+                  | Checkbox with success
+              .checkbox
+                label
+                  input#checkbox-warning( type="checkbox" value="option2" )
+                  | Checkbox with warning
+              .checkbox
+                label
+                  input#checkbox-error( type="checkbox" value="option3" )
+                  | Checkbox with error
+
+        .component-subsection
+          h3 Control sizing 控制大小
+
+          h4 Height sizing
+          .example
+            input.form-control.input-lg( type="text" placeholder=".input-lg" )
+            | <br>
+            input.form-control( type="text" placeholder=".Default input" )
+            | <br>
+            input.form-control.input-sm( type="text" placeholder="..input-sm" )
+            | <br>
+            select.form-control.input-lg
+              option( value="" ) .input-lg
+            | <br>
+            select.form-control
+              option( value="" ) Default select
+            | <br>
+            select.form-control.input-sm
+              option( value="" ) .input-sm
+          pre: code.
+            input.form-control.input-lg( type="text" placeholder=".input-lg" )
+            input.form-control( type="text" placeholder=".Default input" )
+            input.form-control.input-sm( type="text" placeholder="..input-sm" )
+
+            select.form-control.input-lg
+              option( value="" ) .input-lg
+            select.form-control
+              option( value="" ) Default select
+            select.form-control.input-sm
+              option( value="" ) .input-sm
+
+          h4 Horizontal form group sizes
+          .example
+            form.form-horizontal
+              .form-group.form-group-lg
+                label.col-sm-4.control-label( for="form-group-input-large" ) Large label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-large" placeholder="Large input" )
+              .form-group.form-group-sm
+                label.col-sm-4.control-label( for="form-group-input-small" ) Small label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-small" placeholder="Small input" )
+          pre: code.
+            form.form-horizontal
+              .form-group.form-group-lg
+                label.col-sm-4.control-label( for="form-group-input-large" ) Large label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-large" placeholder="Large input" )
+              .form-group.form-group-sm
+                label.col-sm-4.control-label( for="form-group-input-small" ) Small label
+                .col-sm-20
+                  input.form-control( type="text" id="form-group-input-small" placeholder="Small input" )
+
+          h4 Column sizing
+          .example
+            .row
+              .col-xs-4
+                input.form-control( type="text" placeholder=".col-xs-4" )
+              .col-xs-6
+                input.form-control( type="text" placeholder=".col-xs-6" )
+              .col-xs-8
+                input.form-control( type="text" placeholder=".col-xs-8" )
+          pre: code.
+            .row
+              .col-xs-4
+                input.form-control( type="text" placeholder=".col-xs-4" )
+              .col-xs-6
+                input.form-control( type="text" placeholder=".col-xs-6" )
+              .col-xs-8
+                input.form-control( type="text" placeholder=".col-xs-8" )
+
 
       section#components.component-section
         h2 Components 其他元件
