@@ -11,9 +11,10 @@ block body
   .container
     .alert.alert-info
       if user
-        | Logged in as <u>#{user.get("email")}</u>.
+        | Logged in as #{user.get("email")}.&nbsp;
+        a( href="/logout" ) Log out.
       else
-        | Not logged in
+        | Not logged in.
 
     p.lead
       | The Auth app is a demonstration of using the pickee-passport middleware
