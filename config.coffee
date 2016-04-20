@@ -17,6 +17,9 @@ module.exports =
   S3_SECRET: 'replace-me'
   S3_BUCKET: 'replace-me'
   S3_UPLOAD_DIR: 'uploads'
+  SESSION_SECRET: 'replace-me'
+  SESSION_COOKIE_MAX_AGE: 31536000000
+  SESSION_COOKIE_KEY: 'rudy.sess'
   PICKEE_ID: 'replace-me'
   PICKEE_SECRET: 'replace-me'
 

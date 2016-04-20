@@ -1,0 +1,74 @@
+extends ../../../components/main_layout/templates/index
+
+append locals
+  - assetPackage = 'auth'
+  - bodyClass = 'auth'
+
+block head
+  title Log in to Takoman
+
+block body
+  .container
+    .alert.alert-info
+      if user
+        | Logged in as #{user.get("email")}.&nbsp;
+        a( href="/logout" ) Log out.
+      else
+        | Not logged in.
+
+    p.lead
+      | The Auth app is a demonstration of using the pickee-passport middleware
+      | to authenticate a user via either a HTTP form submission or AJAX call.
+    ul
+      li An HTTP form submission will simply refresh the page with login info rendered on the top.
+      li Client-side login/signup will display the result on the right-hand side.
+
+    .row
+      .col-sm-8
+        section.login
+          h3 登入
+          form.form-horizontal( action="/users/login" method="POST" )
+            .form-group
+              label.col-sm-6( for="login-email" ) Email
+              .col-sm-18
+                input.form-control( id="login-email" name="email" type="text" placeholder="Email" required autofacus )
+            .form-group
+              label.col-sm-6( for="login-password" ) 密碼
+              .col-sm-18
+                input.form-control( id="login-password" name="password" type="password" placeholder="密碼" required )
+            .form-group
+              .checkbox.col-sm-18.col-sm-offset-6
+                label
+                  input( type="checkbox" name="client-side" checked )
+                  | Client-side login
+            .form-group
+              .col-sm-18.col-sm-offset-6
+                button( type="submit" ) 登入
+
+        section.signup
+          h3 註冊
+          form.form-horizontal( action="/users/signup" method="POST" )
+            .form-group
+              label.col-sm-6( for="signup-name" ) 名字
+              .col-sm-18
+                input.form-control( id="signup-name" name="name" type="text" placeholder="Name" required autofacus )
+            .form-group
+              label.col-sm-6( for="signup-email" ) Email
+              .col-sm-18
+                input.form-control( id="signup-email" name="email" type="text" placeholder="Email" required )
+            .form-group
+              label.col-sm-6( for="signup-password" ) 密碼
+              .col-sm-18
+                input.form-control( id="signup-password" name="password" type="password" placeholder="密碼" required )
+            .form-group
+              .checkbox.col-sm-18.col-sm-offset-6
+                label
+                  input( type="checkbox" name="client-side" checked )
+                  | Client-side signup
+            .form-group
+              .col-sm-18.col-sm-offset-6
+                button( type="submit" ) 註冊
+      .col-sm-15.col-sm-offset-1
+        section.auth-info
+          h3 Client-side 登入/註冊訊息
+          pre.auth-info-content
